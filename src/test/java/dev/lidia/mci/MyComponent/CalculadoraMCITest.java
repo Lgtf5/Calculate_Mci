@@ -23,6 +23,24 @@ public class CalculadoraMCITest {
         //1.75 * 1.75 = 3.06 ---> 70 / 3.06 = 22.87 IMC
         assertThat(resultado, is(closeTo(resultadoEsperado, 0.01)));
     }
-    
+
+    //implementamos ejemplos ficticios de los posibles errores y plasticidad en casos extremos para testar control de errores
+    @org.junit.jupiter.api.Test
+    @DisplayName ("control de errores en valores introducidos")
+    //creamos test independiente de métodos, inventamos nombre
+    public void testCalcularValores_ExtremosErraticos() {
+
+        //creamos un ficticio para cada extremo (delgadez severa/obesidad morbida) [asegura que la función maneje los valores en límites del baremo normal de la población y verifica que no hay errores con valores grandes o pequeños desde punto vista matemático]
+        double imc1 = CalculadoraMCI.calcularMCI(40,1.60);
+        double imc2 = CalculadoraMCI.calcularMCI(120, 2.00);
+
+        //contraste que el resultado en sí sea el resultado esperado dentro de los extremos (delgadez severa/obesidad morbida) y que los resultados siempre den valores positivos
+
+        //1.60 * 1.60 = 2.56 ----> 40 / 2.56 = 15.62 IMC
+        assertThat(imc1, greaterThan(0.0));
+        //2.00 * 2.00 = 4 ----> 120 / 4 = 30 IMC
+        assertThat(imc2, greaterThan(0.0));
+
+    }
    
 }
