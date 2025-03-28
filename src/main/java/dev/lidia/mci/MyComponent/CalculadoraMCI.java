@@ -8,7 +8,7 @@ public class CalculadoraMCI {
 
     public CalculadoraMCI(double peso, double estatura) {
     
-        //creamos la condición para no insertar datos negativos y, si se hace bien, que retorne resultado IMC
+        
         if (peso <=0 || estatura <=0) {
             throw new IllegalArgumentException("El peso y la altura no pueden ser valores negativos, deben ser mayores que cero");
         }
@@ -32,6 +32,9 @@ public class CalculadoraMCI {
     }
         
     private void determinarCategoria() {
+        if (mci < 18.5) {
+            categoria = "PESO BAJO";
+        }
 
     }
     
