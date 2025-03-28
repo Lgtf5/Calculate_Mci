@@ -34,8 +34,9 @@ public class CalculadoraMCI {
     private void determinarCategoria() {
         if (mci < 18.5) {
             categoria = "PESO BAJO";
+        } else if (mci < 24.9) {
+            categoria = "NORMAL";
         }
-
     }
     
 }
