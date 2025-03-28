@@ -63,6 +63,9 @@ public class CalculadoraMCITest {
         CalculadoraMCI sobrepeso = new CalculadoraMCI(80, 1.70);
         assertEquals("SOBREPESO", sobrepeso.obtenerCategoria());
 
+        CalculadoraMCI obesidad = new CalculadoraMCI(100, 1.70);
+        assertEquals("OBESIDAD", obesidad.obtenerCategoria());
+
     }
 
 }
