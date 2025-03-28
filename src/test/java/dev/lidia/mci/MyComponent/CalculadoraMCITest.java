@@ -57,6 +57,9 @@ public class CalculadoraMCITest {
         CalculadoraMCI mciPorDebajo = new CalculadoraMCI(40, 1.60);
         assertEquals ("PESO BAJO", mciPorDebajo.obtenerCategoria());
 
+        CalculadoraMCI normal = new CalculadoraMCI(65, 1.70);
+        assertEquals("NORMAL", normal.obtenerCategoria());
+
     }
 
 }
