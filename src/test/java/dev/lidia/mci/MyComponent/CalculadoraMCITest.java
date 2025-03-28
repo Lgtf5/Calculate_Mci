@@ -60,6 +60,9 @@ public class CalculadoraMCITest {
         CalculadoraMCI normal = new CalculadoraMCI(65, 1.70);
         assertEquals("NORMAL", normal.obtenerCategoria());
 
+        CalculadoraMCI sobrepeso = new CalculadoraMCI(80, 1.70);
+        assertEquals("SOBREPESO", sobrepeso.obtenerCategoria());
+
     }
 
 }
