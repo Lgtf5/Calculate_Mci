@@ -34,7 +34,8 @@ public class CalculadoraMCI {
     private enum CategoriaMCI {
         PESO_BAJO(0, 18.5),
         NORMAL(18.5, 24.9),
-        SOBREPESO(25, 29.9);
+        SOBREPESO(25, 29.9),
+        OBESIDAD(30, Double.MAX_VALUE);
         
 
         private final double minimoPeso;
@@ -51,7 +52,7 @@ public class CalculadoraMCI {
                     return categoria;
                 }
             }
-            return SOBREPESO;
+            return OBESIDAD;
         }
     }
 
